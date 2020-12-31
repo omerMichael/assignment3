@@ -44,7 +44,10 @@ int similar (char *s, char *t, int n)
         return 0;
      int j=-1;// num of mistake
     int i=0;
-   
+   if(substring(s,t)==1){
+       return 1;
+
+   }
 
     int m =0;
     while (*(s+m)!='\0')
@@ -78,7 +81,7 @@ int similar (char *s, char *t, int n)
 
 //*************************************
 
-int getLine(char s[])
+int getLine(char *s)
 {
     int SizeLine = 0;
     char letter = getchar();
@@ -91,11 +94,11 @@ int getLine(char s[])
 
     while((letter != EOF) &&(letter != '\n') && (SizeLine < LINE))
     {
-        s[SizeLine]=letter;
+        *(s+SizeLine)=letter;
         SizeLine++;
         letter = getchar();
     }
-    s[SizeLine]='\0'; // end of the srtring;
+    *(s+SizeLine)='\0'; // end of the srtring;
 
     return SizeLine;
 
@@ -103,21 +106,24 @@ int getLine(char s[])
 
 //*********************************************************
 //function to put a a word in w
-int getWord(char w[])
+int getWord(char *w)
 {
   int SizeWord = 0;
 	char letter = getchar();
+    while(letter==' '){
+        letter=getchar();
+    }
 
 	while((letter != EOF)&&(letter != ' ') &&(letter != '\t')&&(letter != '\n') && (SizeWord < WORD))
 	{
-		w[SizeWord]=letter;
+		*(w+SizeWord)=letter;
 		SizeWord++;
 		letter = getchar();
 	}
 
 
 
-	w[SizeWord]='\0'; // end of the srtring;
+	*(w+SizeWord)='\0'; // end of the srtring;
 
 
 	return SizeWord;
