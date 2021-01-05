@@ -79,7 +79,7 @@ int similar (char *s, char *t, int n)
     return 0;
 }
 
-//*************************************
+
 
 int getLine(char *s)
 {
@@ -104,7 +104,7 @@ int getLine(char *s)
 
 }
 
-//*********************************************************
+
 //function to put a a word in w
 int getWord(char *w)
 {
@@ -130,7 +130,7 @@ int getWord(char *w)
 
 }
 
-//*****************************************************
+
 
 
 void print_lines(char * str)
@@ -148,12 +148,11 @@ void print_lines(char * str)
 
 }
 
-//*****************************************************
+
 
 void print_similar_words(char * str)
 {
     char word[WORD];
-//    int SizeWord = getWord(word);
 
 
     while(getWord(word) != 0)
@@ -163,13 +162,11 @@ void print_similar_words(char * str)
             printf("%s\n", word); //check it
 
 
-//        SizeWord = getWord(word); //word.next();
     }
 
 
 }
 
-//******************************************************
 
 int main ()
 {
